@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 09 - JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Bài tập 09 - Lập trình JavaScript</h1>
+
+    <script>
+
+        // BÀI TẬP 1: Tính tổng số chẵn
+
+        function tongSoChan(arr) {
+            let tong = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    tong += arr[i];
+                }
+            }
+
+            return tong;
+        }
+
+        let mang1 = [1, 2, 3, 4, 5, 6, 8];
+
+        console.log("Bài 1 - Tổng các số chẵn:",
+            tongSoChan(mang1));
+
+
+        // BÀI TẬP 2: Đảo ngược chuỗi
+
+        function daoNguocChuoi(str) {
+            return str.split("").reverse().join("");
+        }
+
+        let chuoi2 = "JavaScript";
+
+        console.log("Bài 2 - Chuỗi đảo ngược:",
+            daoNguocChuoi(chuoi2));
+
+
+   
+        // BÀI TẬP 3: Kiểm tra số nguyên tố
+
+        function laSoNguyenTo(n) {
+            if (n < 2) {
+                return false;
+            }
+
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        let so3 = 17;
+
+        console.log("Bài 3 -", so3,
+            "có phải số nguyên tố không:",
+            laSoNguyenTo(so3));
+
+        // BÀI TẬP 4: Tìm số lớn nhất
+
+        function timSoLonNhat(arr) {
+            let max = arr[0];
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+
+            return max;
+        }
+
+        let mang4 = [12, 45, 7, 89, 23];
+
+        console.log("Bài 4 - Số lớn nhất:",
+            timSoLonNhat(mang4));
+
+        // BÀI TẬP 5: Tính giai thừa
+
+        function giaiThua(n) {
+            let ketQua = 1;
+
+            for (let i = 1; i <= n; i++) {
+                ketQua *= i;
+            }
+
+            return ketQua;
+        }
+
+        let so5 = 5;
+
+        console.log("Bài 5 -", so5,
+            "! =", giaiThua(so5));
+
+
+        // BÀI TẬP 6: Kiểm tra Palindrome
+
+        function laPalindrome(str) {
+            let daoNguoc = str.split("").reverse().join("");
+
+            return str === daoNguoc;
+        }
+
+        let chuoi6 = "level";
+
+        console.log("Bài 6 -", chuoi6,
+            "có phải Palindrome không:",
+            laPalindrome(chuoi6));
+
+
+        // BÀI TẬP 7: Tìm số Fibonacci thứ n
+
+        function fibonacci(n) {
+            if (n === 0) {
+                return 0;
+            }
+
+            if (n === 1) {
+                return 1;
+            }
+
+            let a = 0;
+            let b = 1;
+
+            for (let i = 2; i <= n; i++) {
+                let c = a + b;
+                a = b;
+                b = c;
+            }
+
+            return b;
+        }
+
+        let n7 = 10;
+
+        console.log("Bài 7 - Fibonacci thứ",
+            n7, "là:", fibonacci(n7));
+
+
+        // BÀI TẬP 8: Sắp xếp mảng tăng dần
+
+        function sapXepTangDan(arr) {
+            return arr.sort(function(a, b) {
+                return a - b;
+            });
+        }
+
+        let mang8 = [5, 2, 9, 1, 7, 3];
+
+        console.log("Bài 8 - Mảng sau khi sắp xếp:",
+            sapXepTangDan(mang8));
+
+    </script>
+
+</body>
+</html>
+
